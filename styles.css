@@ -22,9 +22,24 @@
 .sidebar{
     grid-row: 1/-1;
     background-color: burlywood;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.sidebar-content,
+.sidebar-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .main-content{
     grid-column: 2/3;
     background-color: coral;
+}
+
+.card{
+    display: flex;
+    gap: 10px;
 }
