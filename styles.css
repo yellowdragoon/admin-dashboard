@@ -62,8 +62,12 @@
 }
 
 .main-content{
+    padding: 20px;
     grid-column: 2/3;
-    background-color: coral;
+    background-color: var(--color-light);
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    grid-template-rows: 450px 1fr;
 }
 
 .card{
@@ -117,12 +121,14 @@
 }
 
 .search-container > img,
-.profile-icons > img{
+.profile-icons > img,
+.card-icons > img{
     width: 30px;
     height: auto;
 }
 
-#pfp-small{
+#pfp-small,
+.trending-card > img{
     width: 60px;
     height: 60px;
     border-radius: 100%;
@@ -170,4 +176,102 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
+}
+.projects{
+    grid-column: 1/2;
+    grid-row: 1/-1;
+}
+
+.project-cards{
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+}
+.project-card,
+.announcement-card,
+.trending-container{
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.project-card{
+    border-left: 10px solid var(--color-dark-blue);
+    width: 400px;
+    height: 200px;
+}
+
+.card-icons{
+    align-self: flex-end;
+    display: flex;
+    gap: 20px;
+}
+
+.card-text{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-text > p,
+.announcement-card > p{
+    color: var(--color-grey);
+}
+
+.announcement-card > p{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.announcement-card > h3{
+    font-weight: 500;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+hr{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.card-text > h3{
+    font-weight: 500;
+}
+
+.projects > h2,
+.announcements > h2,
+.trending > h2{
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+
+.trending-card{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 80px 1fr;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.trending-card > img{
+    grid-row: 1/-1;
+}
+
+.tagline{
+    color: var(--color-grey);
+}
+
+.announcements,
+.trending{
+    margin-right: 50px;
+}
+
+.trending{
 }
